@@ -1,4 +1,12 @@
 from pyramid.config import Configurator
+from google.cloud import ndb
+import google.cloud.logging
+
+client = google.cloud.logging.Client()
+client.get_default_handler()
+client.setup_logging()
+
+datastore_client = ndb.Client(project='my-project')
 
 
 def main(global_config, **settings):

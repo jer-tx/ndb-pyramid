@@ -1,4 +1,4 @@
-from google.cloud import ndb
+from ndbpyramid import datastore_client
 
 
 class datastore_tween_factory(object):
@@ -7,7 +7,7 @@ class datastore_tween_factory(object):
         self.registry = registry
 
     def __call__(self, request):
-        datastore_client = ndb.Client(project='your-gcp-project')
+
         with datastore_client.context():
             response = self.handler(request)
 

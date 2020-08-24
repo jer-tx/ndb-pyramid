@@ -1,3 +1,4 @@
 pyramid
 waitress
 google-cloud-ndb
+google-cloud-logging
